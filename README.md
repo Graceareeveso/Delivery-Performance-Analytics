@@ -62,9 +62,9 @@ SELECT driver_id,
        COUNT(*) AS total_orders,
        ROUND((COUNT(*) FILTER (WHERE status = 'Late')::decimal / COUNT(*)) * 100,2) AS late_percentage
 
-
-👉 Full SQL scripts: [SQL/urban_eats_queries.sql](SQL/urban_eats_queries.sql)  
-👉 Power BI dashboard file (with DAX measures): [PowerBI/UrbanEats_Report.pbix](PowerBI/UrbanEats_Report.pbix)  
+```
+ Full SQL scripts: [SQL/urban_eats_queries.sql](SQL/urban_eats_queries.sql)  
+ Power BI dashboard file (with DAX measures): [PowerBI/UrbanEats_Report.pbix](PowerBI/UrbanEats_Report.pbix)  
 
 ---
 
