@@ -3,7 +3,7 @@ SELECT COUNT(*) FROM Customer_orders_realistic o LEFT JOIN Drivers_realistic d U
 SELECT COUNT(*) FROM Customer_orders_realistic o LEFT JOIN Restaurants_realistic r USING (RestaurantID) WHERE r.RestaurantID IS NULL;
 SELECT COUNT(*) FROM Customer_orders_realistic o LEFT JOIN Traffic_data_realistic t USING (LocationID) WHERE t.LocationID IS NULL;
 
-
+ 
 SELECT DISTINCT OrderStatus
 FROM Customer_orders_realistic
 ORDER BY OrderStatus;
