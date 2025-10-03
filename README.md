@@ -17,7 +17,7 @@
 ---
 
 ## Project Overview
-Urban Eats is a food delivery service where **timeliness and reliability** are critical to customer satisfaction and competitiveness.  
+Urban Eats is a food delivery service where **timeliness and reliability** are critical to customer satisfaction and business competitiveness.  
 
 This project evaluates **delivery performance and service reliability** using 1,000 delivery records.  
 
@@ -56,11 +56,17 @@ The dataset consisted of **1,000 Urban Eats delivery records**, including:
 ### Sample Code
 
 ```sql
--- PostgreSQL: Calculate late deliveries by driver
-SELECT driver_id, 
-       COUNT(*) FILTER (WHERE status = 'Late') AS late_orders,
-       COUNT(*) AS total_orders,
-       ROUND((COUNT(*) FILTER (WHERE status = 'Late')::decimal / COUNT(*)) * 100,2) AS late_percentage
+-- PostgreSQL:
+SELECT DISTINCT OrderStatus
+FROM Customer_orders_realistic
+ORDER BY OrderStatus;
+
+
+-- Orders referencing missing drivers
+SELECT COUNT(*) AS missing_drivers
+FROM Customer_orders_realistic o
+LEFT JOIN Drivers_realistic d ON o.DriverID = d.DriverID
+WHERE d.DriverID IS NULL;
 
 ```
  Full SQL scripts: [SQL/urban_eats_queries.sql](SQL/urban_eats_queries.sql)  
@@ -93,7 +99,7 @@ The analysis was structured around key business questions:
    - Segmented by **restaurant** to capture preparation bottlenecks.  
    - Segmented by **location zones** to evaluate congestion and routing issues.  
 
-3. **How do SLA thresholds affect reliability?**  
+3. **How do SLA(Service Legal Agreement) thresholds affect reliability?**  
    - Tested delivery outcomes under **9, 12, and 15-minute SLAs**.  
    - Compared on-time percentages across scenarios.  
 
@@ -128,7 +134,7 @@ Despite the average delivery time being within SLA, nearly **half of deliveries 
 ### Locations
 - Congested delivery zones showed consistently higher lateness  
 
-### SLA Sensitivity
+### Delivery SLA(Service Legal Agreement) Sensitivity
 - **9 mins:** 53% on-time  
 - **12 mins:** 65% on-time  
 - **15 mins:** 82% on-time  
@@ -150,7 +156,5 @@ This demonstrates the **trade-off between customer expectations and operational 
 
 ## Limitations
 - Dataset size: **1,000 orders only** → limited coverage of seasonality.  
-- External factors such as **traffic, weather, tim**
+- External factors such as **traffic, weather, time(e.g., peak vs off-peak hours) were not captured.**
 
-FROM deliveries
-GROUP BY driver_id;
