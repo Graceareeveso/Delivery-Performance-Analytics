@@ -124,7 +124,7 @@ Despite the average delivery time being within SLA, nearly **half of deliveries 
 
 ---
 
-### Performance Variations Across Drivers, restaurants, and locations
+### Performance Variations Across Drivers, Restaurants, and Lcations
 
 ### Drivers
 - Top driver: **Michelle Ballard – 88% on-time (28 completed orders, avg. 9.79 mins)**  
