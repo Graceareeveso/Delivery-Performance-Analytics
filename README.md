@@ -38,16 +38,6 @@ The business wanted to understand:
 
 ---
 
-## Data Sources
-The dataset consisted of **1,000 Urban Eats delivery records**, including:  
-- Delivery timestamps: order creation, pickup, completion  
-- Driver identifiers  
-- Restaurant identifiers  
-- Customer location zones (proxy for congestion/routing)  
-- Order status: on-time, late, pending  
-
----
-
 ## Tools and Skills
 - **PostgreSQL** – for data extraction, cleaning, and aggregation  
 - **Power BI** – dashboards and interactive reports  
@@ -105,7 +95,7 @@ The analysis was structured around key business questions:
 
 4. **What actionable insights can be drawn?**  
    - Benchmarked best-performing drivers.  
-   - Identified underperforming restaurants and congested zones.  
+   - Identified underperforming restaurants.  
    - Recommended SLA targets aligned with operational capacity.  
 
 ---
@@ -134,7 +124,7 @@ Despite the average delivery time being within SLA, nearly **half of deliveries 
 - A few restaurants caused most **pending orders**, indicating prep bottlenecks  
 
 ### Locations
-- Congested delivery zones showed consistently higher lateness  
+- Specific delivery zones consistently recorded higher lateness, compared to other locations.  
 
 ### Delivery SLA(Service Legal Agreement) Sensitivity
 - **9 mins:** 53% on-time  
@@ -147,13 +137,8 @@ This demonstrates the **trade-off between customer expectations and operational 
 
 ## Recommendations
 - **Replicate best driver practices** to raise fleet performance.  
-- **Reduce prep delays** in underperforming restaurants.  
-- **Target congested delivery zones** with smarter routing and resource allocation.  
-- **Use SLA strategically:**  
-  - 9 mins = diagnostic benchmark  
-  - 12 mins = balanced, achievable target  
-  - 15 mins = risk of masking inefficiencies  
-
+- **Reduce preparation delays** in underperforming restaurants.  
+- Use SLA strategically to improve delivery performance and customer satisfaction.
 ---
 
 ## Limitations
